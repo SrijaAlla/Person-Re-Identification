@@ -6,7 +6,7 @@ from sklearn.cluster import SpectralClustering
 from sklearn.metrics import silhouette_score
 
 # Load the detections.json file
-with open("detections.json", "r") as f:
+with open("final_detections.json", "r") as f:
     detections = json.load(f)
 
 # Extract features and detection_ids
@@ -52,5 +52,5 @@ for i, label in enumerate(best_labels):
     clusters[label].append(detection_ids[i])
 
 # Save the best result to labels.json
-with open("labels.json", "w") as f:
+with open("prediction.json", "w") as f:
     json.dump(clusters, f)
